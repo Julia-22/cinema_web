@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        html{
+            margin:0;
+            padding:0;
+            width:100%;
+            height: 100vh;
+        }
+
+        body{
+            margin:0;
+            padding:0;
+            width:100%;
+            height: 100vh;
+            background-size: cover;
+            display: table;
+        }
+
+        .input_film{
+            margin-top: 40px;
+            border:1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 3em;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translateX(-50%) translateY(-50%);
+        }
+
+        h2{
+            margin-top: 150px;
+            font-family: serif;
+            font-weight: lighter;
+            color:black;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        input{
+            display: block;
+            width: 600px;
+            height: 40px;
+            background: rgba(0,0,0,0.5);
+            outline: none;
+            border:1px solid rgba(0,0,0,0.5);
+            font-family: Source Sans Pro;
+            font-weight: lighter;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+
+        ::-moz-placeholder {
+            color: white;
+            opacity: 0.7;
+
+        }
+        ::-webkit-input-placeholder {
+            color: white;
+            opacity: 0.7;
+        }
+
+        button{
+            width: 600px;
+            height: 50px;
+            font-size:16px;
+            background: #000;
+            font-family: Source Sans Pro;
+            font-weight: 700;
+            color:#fff;
+            border:0px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="input_film">
+    <form method="post" action="/admin/addFilm">
+        <h2>Добавление нового фильма</h2>
+        <input type="text" name="name" placeholder="Введите название фильма"/>
+        <input type="text" name="film_image" placeholder="Постер"/>
+        <input type="number" name="film_types" placeholder="Жанр"/>
+        <input type="text" name="description" placeholder="Описание"/>
+        <input type="text" name="trailer_img" placeholder="Заставка к трейлеру"/>
+        <input type="text" name="running_time" placeholder="Время"/>
+        <input type="text" name="release_date" placeholder="Дата выхода"/>
+        <input type="text" name="original_title" placeholder="Оригинальное название"/>
+        <input type="text" name="production" placeholder="Страна"/>
+        <input type="number" name="year_production" placeholder="Год выхода"/>
+        <input type="text" name="director" placeholder="Режисер"/>
+        <input type="text" name="cast" placeholder="Актеры"/>
+        <input type="text" name="age_limit" placeholder="Вековое ограничение"/>
+        <input type="text" name="showing_in" placeholder="2D/3D"/>
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

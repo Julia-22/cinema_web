@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="/home/julia/Desktop/movie/src/main/resources/csski/home.css">-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 10px;
+            font-family: "Roboto Cn", sans-serif;
+        }
+
+        a{
+            text-decoration: none;
+            color: #eee;
+        }
+
+        header{
+            width: 100%;
+            height: 20vh;
+            background: black;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container{
+            max-width: 120rem;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .menu-toggle{
+            position: fixed;
+            top: 2.5rem;
+            right: 2.5rem;
+            color: #eeeeee;
+            font-size: 3rem;
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+        }
+
+        nav{
+            padding-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+
+        .brand{
+            font-size: 3rem;
+            font-weight: 300;
+            transform: translateX(-100rem);
+            animation: slideIn .5s forwards;
+        }
+
+        .brand span{
+            color: #0033FF;
+        }
+
+        nav ul{
+            display: flex;
+        }
+
+        nav ul li{
+            list-style: none;
+            transform: translateX(100rem);
+            animation: slideIn .5s forwards;
+        }
+
+        nav ul li:nth-child(1){
+            animation-delay: 0s;
+        }
+
+        nav ul li:nth-child(2){
+            animation-delay: .5s;
+        }
+
+        nav ul li:nth-child(3){
+            animation-delay: 1s;
+        }
+
+        nav ul li:nth-child(4){
+            animation-delay: 1.5s;
+        }
+
+        nav ul li a{
+            padding: 1rem 0;
+            margin: 0 3rem;
+            position: relative;
+            letter-spacing: 2px;
+        }
+
+        nav ul li a:last-child{
+            margin-right: 0;
+        }
+
+        nav ul li a::before,
+        nav ul li a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #0033FF;
+            left: 0;
+            transform: scaleX(0);
+            transition: all .5s;
+        }
+
+        nav ul li a::before{
+            top: 0;
+            transform-origin: left;
+        }
+
+        nav ul li a::after{
+            bottom: 0;
+            transform-origin: right;
+        }
+
+        .overlay{
+            background-color: rgba(0,0,0,.95);
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            transition: opacity 650ms;
+            transform: scale(0);
+            opacity: 0;
+            display: none;
+        }
+
+        nav ul li a:hover::before,
+        nav ul li a:hover::after{
+            transform: scaleX(1);
+        }
+
+        @keyframes slideIn {
+            from{
+
+            }
+            to{
+                transform: translateX(0);
+            }
+        }
+
+        main{
+            margin:0;
+            padding:0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:#003e46;
+            font-family: 'Poppins',sans-serif;
+        }
+
+        main .container{
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        main .box{
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background:#000;
+            box-shadow: 0 30px 30px rgba(0,0,0, .5);
+        }
+
+        main .box .imgBx{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+        }
+
+        main .box .imgBx img{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .box:hover .imgBx img{
+            opacity: 0;
+        }
+
+        main .box .content{
+            position: absolute;
+            bottom:20px;
+            left: 10%;
+            width:80%;
+            height: 60px;
+            background:#fff;
+            transition: 0.5s;
+            overflow: hidden;
+
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        main .box:hover .content{
+            width: 100%;
+            height: 100%;
+            bottom:0;
+            left:0;
+        }
+
+        main .box .content h3{
+            margin:0;
+            padding:0;
+            font-size: 20px;
+        }
+
+        main .box .content p{
+            margin:10px 0 0;
+            padding:0;
+            opacity: 0;
+            line-height: 1.2em;
+            transition: 0.5s;
+            text-align: justify;
+        }
+
+        main .box:hover .content p{
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+
+
+        .footer-main-div{
+            width: 100%;
+            height: auto;
+            margin:auto;
+            background:black;
+            padding:25px 0px;
+        }
+
+        .footer-social-icons{
+            width: 100%;
+            height: auto;
+            margin:auto;
+        }
+
+        .footer-social-icons ul{
+            margin:0px;
+            padding:0px;
+            text-align: center;
+        }
+
+        .footer-social-icons ul li{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin:0px 15px;
+            border-radius: 100%;
+            background:#fff;
+        }
+
+        .footer-social-icons ul li a{
+            color:black;
+            font-size:25px;
+            display:block;
+        }
+
+        .footer-social-icons ul li a i{
+            line-height: 50px;
+        }
+
+        .footer-social-icons ul li:hover{
+            background:#0033FF;
+        }
+
+        .footer-social-icons ul li:hover a{
+            color:#fff;
+        }
+
+        .footer-menu-one{
+            width: 100%;
+            height: auto;
+            margin:auto;
+            margin-top:25px;
+        }
+
+        .footer-menu-one ul{
+            margin:0px;
+            padding:0px;
+            text-align: center;
+        }
+
+        .footer-menu-one ul li{
+            display: inline-block;
+            margin:0px 15px;
+        }
+
+        .footer-menu-one ul li a{
+            font-family: arial;
+            font-size: 15px;
+            font-weight: 600;
+            color:#fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-menu-one ul li a:hover{
+            color:#0033FF;
+        }
+
+        .footer-menu-two{
+            width: 100%;
+            height: auto;
+            margin:auto;
+            margin-top:15px;
+        }
+
+        .footer-menu-two ul{
+            margin:0px;
+            padding:0px;
+            text-align: center;
+        }
+
+        .footer-menu-two ul li{
+            display: inline-block;
+            margin:0px 15px;
+        }
+
+        .footer-menu-two ul li a{
+            font-family: arial;
+            font-size: 15px;
+            font-weight: 600;
+            color:#fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-menu-two ul li a:hover{
+            color:#0033FF;
+        }
+
+        .footer-bottom{
+            width: 100%;
+            height: auto;
+            margin:auto;
+            background:#000033;
+            padding:10px;
+        }
+
+        .footer-bottom p{
+            font-family: arial;
+            font-size: 14px;
+            text-align: center;
+            color:#fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <h1 class="brand"><a href="#">Br<span>a</span>nd</a></h1>
+            <ul>
+                <li><a href="/home/julia/Desktop/cinema_web/home.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="/home/julia/Desktop/cinema_web/sign_in.html">Sign In</a></li>
+                <li><a href="/home/julia/Desktop/cinema_web/sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    {{#films}}
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="{{film_image}}">
+            </div>
+            <div class="content">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div>
+        {{/films}}
+</main>
+
+<footer>
+    <div class="footer-main-div">
+        <div class="footer-social-icons">
+            <ul>
+                <li><a href="#" target="blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" target="blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" target="blank"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" target="blank"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-menu-one">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-menu-two">
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Media</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>All rights reserved Cinema City Ukraine <time>2019</time></p>
+    </div>
+</footer>
+
+</body>
+</html>
