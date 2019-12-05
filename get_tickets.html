@@ -6,6 +6,7 @@
 	<title>Get tickets</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="get_tickets.css">
+	<script src="../cinema_web/jquery/jquery.js"></script>
 </head>
 <body>
 		<header>
@@ -13,10 +14,10 @@
 				<nav>
 					<h1 class="brand"><a href="#">Br<span>a</span>nd</a></h1>
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="/home/julia/Desktop/cinema_web/home.html">Home</a></li>
 						<li><a href="#">Services</a></li>
-						<li><a href="/home/julia/Desktop/project_cinema/html/sign in/sign_in.html">Sign In</a></li>
-						<li><a href="/home/julia/Desktop/project_cinema/html/sign up/sign_up.html">Sign Up</a></li>
+						<li><a href="/home/julia/Desktop/cinema_web/sign_in.html">Sign In</a></li>
+						<li><a href="/home/julia/Desktop/cinema_web/sign_up.html">Sign Up</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -24,16 +25,16 @@
 		
 		
 		<div class="trailer">
-			<img src="/home/julia/Desktop/project_cinema/images/6e2dc137b9b8ad6e7aaed703acafb117.jpg" width="100%" height="540">
-				<div class="play_button">
-							<img class="btn_img" src="/home/julia/Downloads/play-button.png">
-				</div>
+			<div class="play_button">
+				<img class="back_trailer" src="/home/julia/Desktop/project_cinema/images/6e2dc137b9b8ad6e7aaed703acafb117.jpg">
+				<img class="btn_img" src="/home/julia/Desktop/project_cinema/images/play-button-inside-a-circle.png">
+			</div>
 		</div>
 
 		<main>
 			<section class="title_film">
-				<p>Deadpool</p>
-				<p>120 min | Age: 16+ | 2D</p>
+				<p class="title">Deadpool</p>
+				<p class="short_info">120 min | Age: 16+ | 2D</p>
 			</section>
 
 				<div class="litle_rectangle">
@@ -41,8 +42,10 @@
 			
 					<article>
 						<p>Уэйд Уилсон – профессиональный наёмник, мастерски владеющий всевозможным холодным и огнестрельным оружием, знающий несколько смертельных боевых искусств. Узнав, что его тело убивает неизлечимый рак, находящийся в терминальной стадии, понимая, что жить ему осталось совсем недолго, Уэйд соглашается на предложение тайной военной организации, специализирующейся на создании биологического оружия путём сверхусиления людей. После проведённых опытов, значительно увеличивших его силу, рефлексы и выносливость, Уилсон получает способность к ускоренной регенерации, способной восстанавливать его тело после всевозможных, даже смертельных, повреждений. Обретенная способность к ускоренному исцелению, что немаловажно, могла восстанавливать убиваемые раком клетки, тем самым продлевая жизнь Уэйда, хотя её возможностей оказалось недостаточно, чтобы исцелить само заболевание.</p>
-						<button>Watch Trailer</button>
-						<button>Buy Ticket</button>
+						<div class="buttons">
+							<button>Watch Trailer</button>
+							<button class="buy">Buy Ticket</button>
+						</div>
 					</article>
 				
 				
@@ -91,41 +94,20 @@
 				</div>
 
 			<section class="buy-tickets">
-				<div class="dws-wrapper">
-					<ul class="accordion">
-						<li>
-							<img  class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-10-40.jpg" alt="Monday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-10-51.jpg" alt="Monday">
-						</li>
-						<li>
-							<img  class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-00.jpg" alt="Tuesday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-10-56.jpg" alt="Tuesday">
-						</li>
-						<li>
-							<img class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-04.jpg" alt="Wednesday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-10.jpg" alt="Wednesday">
-						</li>
-						<li>
-							<img class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-18.jpg" alt="Thursday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-15.jpg" alt="Thursday">
-						</li>
-						<li>
-							<img class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-23.jpg" alt="Friday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-27.jpg" alt="Friday">
-						</li>
-						<li>
-							<img class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-34.jpg" alt="Saturday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-31.jpg" alt="Saturday">
-						</li>
-						<li>
-							<img class="second" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-38.jpg" alt="Sunday">
-							<img  class="first" src="/home/julia/Desktop/project_cinema/images/photo_2019-10-13_23-11-42.jpg" alt="Sunday">
-						</li>
+				<div class="day_of_seans">
+					<ul class="seans">
+								<li><a href="#">Monday</a></li>
+								<li><a href="#">Tuesday</a></li>
+								<li><a href="#">Wednesday</a></li>
+								<li><a href="#">Thursday</a></li>
+								<li><a href="#">Friday</a></li>
+								<li><a href="#">Saturday</a></li>
+								<li><a href="#">Sunday</a></li>
 					</ul>
 				</div>
 				<div class="time_seans">
 					<ul class="seans">
-								<li><a href="#">11:45</a></li>
+								<li><a href="#modal">11:45</a></li>
 								<li><a href="#">13:10</a></li>
 								<li><a href="#">15:30</a></li>
 								<li><a href="#">17:25</a></li>
@@ -134,6 +116,15 @@
 					</ul>
 				</div>
 			</section>
+
+
+			<div class="modal" id="modal">
+				<div class="modal_content">
+					<a href="#" class="modal_close">&times;</a>
+</div>
+</div>
+
+ 
 		</main>
 
 		<footer>
@@ -171,9 +162,10 @@
 				<p>All rights reserved Cinema City Ukraine <time>2019</time></p>
 			</div>
 		</footer>
-</body>
+		<!-- <script type="text/javascript">
+			$('.cinema-seats .seat').on('click', function() {
+  $(this).toggleClass('active');
+});
+		</script> -->
+	</body>
 </html>
-
-<!-- change -->
-<!-- change in master -->
-<!-- change for Pavel -->
